@@ -1,0 +1,12 @@
+apiVersion: plugin.github.com.ellioben/v1beta1
+kind: ExtPower
+metadata:
+  labels:
+    app.kubernetes.io/name: extpower
+    app.kubernetes.io/instance: extpower-sample
+    app.kubernetes.io/part-of: operator-hook
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: operator-hook
+  name: extpower-sample
+spec:
+  # TODO(user): Add fields here

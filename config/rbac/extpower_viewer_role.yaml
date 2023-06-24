@@ -1,0 +1,27 @@
+# permissions for end users to view extpowers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: extpower-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: operator-hook
+    app.kubernetes.io/part-of: operator-hook
+    app.kubernetes.io/managed-by: kustomize
+  name: extpower-viewer-role
+rules:
+- apiGroups:
+  - plugin.github.com.ellioben
+  resources:
+  - extpowers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - plugin.github.com.ellioben
+  resources:
+  - extpowers/status
+  verbs:
+  - get

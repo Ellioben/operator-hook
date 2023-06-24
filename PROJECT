@@ -7,4 +7,14 @@ layout:
 - go.kubebuilder.io/v3
 projectName: operator-hook
 repo: github.com/ellioben/operator-hook
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: github.com.ellioben
+  group: plugin
+  kind: ExtPower
+  path: github.com/ellioben/operator-hook/api/v1beta1
+  version: v1beta1
 version: "3"
