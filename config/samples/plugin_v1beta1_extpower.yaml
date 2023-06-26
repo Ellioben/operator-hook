@@ -1,12 +1,18 @@
 apiVersion: plugin.github.com.ellioben/v1beta1
 kind: ExtPower
 metadata:
-  labels:
-    app.kubernetes.io/name: extpower
-    app.kubernetes.io/instance: extpower-sample
-    app.kubernetes.io/part-of: operator-hook
-    app.kubernetes.io/managed-by: kustomize
-    app.kubernetes.io/created-by: operator-hook
-  name: extpower-sample
+  namespace: demo
+  name: extpower-1
 spec:
   # TODO(user): Add fields here
+  image: nginx:latest
+  replicas: 1
+  enable_ingress: false #会被修改为true
+  enable_service: true #成功
+#  labels:
+#    app.kubernetes.io/name: extpower
+#    app.kubernetes.io/instance: extpower-sample
+#    app.kubernetes.io/part-of: operator-hook
+#    app.kubernetes.io/managed-by: kustomize
+#    app.kubernetes.io/created-by: operator-hook
+
