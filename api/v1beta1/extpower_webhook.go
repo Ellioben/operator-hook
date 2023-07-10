@@ -44,6 +44,7 @@ func (r *ExtPower) Default() {
 	extpowerlog.Info("default", "name", r.Name)
 
 	// TODO(user): fill in your defaulting logic.
+	r.Spec.EnableIngress = !r.Spec.EnableIngress
 }
 
 // TODO(user): change verbs to "verbs=create;update;delete" if you want to enable deletion validation.
