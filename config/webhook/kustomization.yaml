@@ -1,0 +1,7 @@
+# 这个文件是用来指定要部署的资源的，这里指定了要部署的资源的路径
+resources:
+- manifests.yaml
+- service.yaml
+
+configurations:
+- kustomizeconfig.yaml

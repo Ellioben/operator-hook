@@ -1,0 +1,24 @@
+# 这个文件是用来修改 webhook 的配置的，这里我们将 webhook 的端口改为 9443，这样就不会和 apiserver 的 443 端口冲突了。
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: controller-manager
+  namespace: system
+spec:
+  template:
+    spec:
+      containers:
+      - name: manager
+        ports:
+        - containerPort: 9443
+          name: webhook-server
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /tmp/k8s-webhook-server/serving-certs
+          name: cert
+          readOnly: true
+      volumes:
+      - name: cert
+        secret:
+          defaultMode: 420
+          secretName: webhook-server-cert

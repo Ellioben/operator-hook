@@ -11,7 +11,6 @@ namePrefix: operator-hook-
 # Labels to add to all resources and selectors.
 #commonLabels:
 #  someName: someValue
-
 bases:
 - ../crd
 - ../rbac

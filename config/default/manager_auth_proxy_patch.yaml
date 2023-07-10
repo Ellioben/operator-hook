@@ -1,5 +1,6 @@
 # This patch inject a sidecar container which is a HTTP proxy for the
 # controller manager, it performs RBAC authorization against the Kubernetes API using SubjectAccessReviews.
+# 这个文件是用来给 controller manager 注入一个 sidecar container 的
 apiVersion: apps/v1
 kind: Deployment
 metadata:
