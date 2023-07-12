@@ -43,7 +43,7 @@ var _ webhook.Defaulter = &ExtPower{}
 func (r *ExtPower) Default() {
 	extpowerlog.Info("default", "name", r.Name)
 
-	// TODO(user): fill in your defaulting logic.
+	// 反向设置
 	r.Spec.EnableIngress = !r.Spec.EnableIngress
 }
 
